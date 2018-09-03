@@ -1,0 +1,12 @@
+.responsive-form label {
+    color: transparent;
+    position: relative;
+    margin-bottom: 25px;
+    &:after {
+        content: 'Enter your phone number to receive a code';
+        color: blue;
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+}

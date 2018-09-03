@@ -1,0 +1,8 @@
+{{n}}
+
+<div>
+    <a [routerLink]="[ '/dashboard', '10']" [queryParams]="{'dashboard': 10}">Navigate back to dashboard 10
+    </a>
+</div>
+
+<button (click)="navigateToDashboard('10')">DashBoard 10</button>
