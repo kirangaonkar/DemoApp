@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -9,9 +9,20 @@ import { FormGroup } from '@angular/forms';
 export class ReactiveFormsComponent implements OnInit {
 
   demoForm: FormGroup;
-  constructor() { }
+  constructor(
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit() {
+    /* this.demoForm = this.fb.group({
+    }); */
+    this.demoForm = new FormGroup({
+      'topic': new FormControl(),
+      'time': new FormControl()
+    });
   }
 
+  onSubmit() {
+
+  }
 }

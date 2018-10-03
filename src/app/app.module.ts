@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LifeCycleHooksComponent } from './components/life-cycle-hooks/life-cycle-hooks.component';
@@ -35,6 +35,7 @@ import { CanDeActivateService } from './services/can-de-activate.service';
   ],
   imports: [
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     BrowserModule
   ],

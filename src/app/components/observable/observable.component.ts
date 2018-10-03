@@ -55,7 +55,7 @@ export class ObservableComponent implements OnInit {
         observer.next(4);
         observer.complete();
       }, 1000);
-      /*  alert(message); */
+      // alert(message);
     });
   }
 
