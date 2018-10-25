@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { CanComponentDeActivate } from './../../services/can-de-activate.service';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -27,10 +28,6 @@ export class DashboardComponent implements OnInit, CanComponentDeActivate {
   }
 
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
-    if (!this.loginService.isLogged) {
-      return !this.loginService.isLogged;
-    } else {
-      return confirm("Hey do you want to navigate without logging out??");
-    }
+    return confirm("Hey do you want to navigate??");
   }
 }

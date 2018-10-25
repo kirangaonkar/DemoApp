@@ -17,6 +17,8 @@ import { RouterParameterComponent } from './components/router-parameter/router-p
 import { SubjectsComponent } from './components/observable/subjects/subjects.component';
 
 import { CanDeActivateService } from './services/can-de-activate.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { CanDeActivateService } from './services/can-de-activate.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserModule
+    BrowserModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [CanDeActivateService],
   bootstrap: [AppComponent]

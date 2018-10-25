@@ -14,17 +14,48 @@ import { CanDeActivateService } from './services/can-de-activate.service';
 const routes: Routes = [
     {
         path: '',
-        component: DashboardComponent
+        component: DashboardComponent,
+        data: { showStatus: true }
     },
     {
+        path: 'form',
+        component: ReactiveFormsComponent,
+        data: { showStatus: false },
+        canActivate: [AuthService]
+    },
+    {
+        path: 'compinteraction',
+        component: ComponentsInteractionComponent,
+        data: { showStatus: true }
+    },
+    {
+        path: 'observables',
+        component: ObservableComponent,
+        data: { showStatus: true }
+    },
+    {
+        path: 'lifecyclehooks',
+        component: LifeCycleHooksComponent,
+        data: { showStatus: true }
+    },
+    {
+        path: 'entrycomponents',
+        component: ComponentsInteractionComponent
+    },
+    {
+        path: 'notfound',
+        component: PageNotFoundComponent
+    }, {
         path: 'dashboard',
         component: DashboardComponent,
+        data: { showStatus: false },
         canActivateChild: [AuthService],
         canDeactivate: [CanDeActivateService],
         children: [
             {
                 path: 'form',
-                component: ReactiveFormsComponent
+                component: ReactiveFormsComponent,
+                data: { showStatus: false }
             },
             {
                 path: 'compinteraction',
@@ -47,31 +78,6 @@ const routes: Routes = [
                 component: ComponentsInteractionComponent
             }
         ]
-    }
-    , {
-        path: 'form',
-        component: ReactiveFormsComponent,
-        canActivate: [AuthService]
-    },
-    {
-        path: 'compinteraction',
-        component: ComponentsInteractionComponent
-    },
-    {
-        path: 'observables',
-        component: ObservableComponent
-    },
-    {
-        path: 'lifecyclehooks',
-        component: LifeCycleHooksComponent
-    },
-    {
-        path: 'entrycomponents',
-        component: ComponentsInteractionComponent
-    },
-    {
-        path: 'notfound',
-        component: PageNotFoundComponent
     },
     {
         path: '**',

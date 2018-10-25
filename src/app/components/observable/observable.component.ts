@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-observable',
@@ -18,11 +17,11 @@ export class ObservableComponent implements OnInit {
   ngOnInit() {
     // general structure
     this.createObservable('creating');
-    this.subscribe();
+    this.subscribeCall();
   }
 
 
-  private subscribe() {
+  subscribeCall() {
     let obs1 = {
       next: (data) => {
         this.dataList.push(data);
