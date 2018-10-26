@@ -12,15 +12,14 @@ import { AuthService } from './services/auth.service';
 import { CanDeActivateService } from './services/can-de-activate.service';
 
 const routes: Routes = [
+
     {
         path: '',
         component: DashboardComponent,
-        data: { showStatus: true }
     },
     {
         path: 'form',
         component: ReactiveFormsComponent,
-        data: { showStatus: false },
         canActivate: [AuthService]
     },
     {
@@ -52,9 +51,11 @@ const routes: Routes = [
         canActivateChild: [AuthService],
         canDeactivate: [CanDeActivateService],
         children: [
+
             {
                 path: 'form',
                 component: ReactiveFormsComponent,
+                canActivate: [AuthService],
                 data: { showStatus: false }
             },
             {

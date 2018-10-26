@@ -1,12 +1,15 @@
+<!-- appHighlight -->
+<!-- appBetterHighlight -->
+<!-- appBetterBetterHighlight -->
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
 
       <ul class="nav nav-tabs">
-        <li role="presentation">
+        <li role="presentation" appBetterBetterBetterHighlight>
           <a routerLink="dashboard" routerLinkActive="active">Components</a>
         </li>
-        <li role="presentation">
+        <li role="presentation"  [appBetterBetterBetterHighlight]="'yellow'" [highlightColor]="'black'">
           <a routerLink="/observables" routerLinkActive="active">Observable</a>
         </li>
         <li role="presentation">
@@ -24,6 +27,8 @@
 </div>
 <a routerLink="/" routerLinkActive="active">Components</a>
 
+<!-- <div *ngFor="let i of demoList"> -->
 <button (click)="login()">Login</button>
 <button (click)="logout()">Logout</button>
+<!-- </div> -->
 <router-outlet></router-outlet>

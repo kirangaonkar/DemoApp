@@ -19,6 +19,11 @@ import { SubjectsComponent } from './components/observable/subjects/subjects.com
 import { CanDeActivateService } from './services/can-de-activate.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HighlightDirective } from './directives/highlight.directive';
+import { BetterHighlightDirective } from './directives/better-highlight.directive';
+import { BetterBetterHighlightDirective } from './directives/better-better-highlight.directive';
+import { BetterBetterBetterHighlightDirective } from './directives/better-better-better-highlight.directive';
+import { NgIfNotDirective } from './directives/ng-if-not.directive';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,12 @@ import { environment } from '../environments/environment';
     RoutingComponent,
     PageNotFoundComponent,
     RouterParameterComponent,
-    SubjectsComponent
+    SubjectsComponent,
+    HighlightDirective,
+    BetterHighlightDirective,
+    BetterBetterHighlightDirective,
+    BetterBetterBetterHighlightDirective,
+    NgIfNotDirective
   ],
   imports: [
     AppRoutingModule,

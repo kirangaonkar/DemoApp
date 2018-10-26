@@ -20,7 +20,7 @@ export class RouterParameterComponent implements OnInit {
 
     this.queryParams = this.route.snapshot.queryParams;
     this.route.queryParams.subscribe((queryParams) => {
-      this.queryParams = queryParams;
+      this.queryParams = queryParams['dashboard'];
     });
   }
 

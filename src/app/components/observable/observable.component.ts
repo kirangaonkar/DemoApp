@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LoginService } from './../../services/login.service';
 
 @Component({
   selector: 'app-observable',
@@ -11,10 +12,17 @@ export class ObservableComponent implements OnInit {
   dataList = [];
   observable;
   subscription;
+  isLogged;
 
-  constructor() { }
+  constructor(
+    private loginService: LoginService
+  ) { }
 
   ngOnInit() {
+    this.loginService.getStatus().subscribe((isLogged: boolean) => {
+      this.isLogged = isLogged;
+      console.log("1st subscriber " + isLogged);
+    });
     // general structure
     this.createObservable('creating');
     this.subscribeCall();

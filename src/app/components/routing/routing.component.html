@@ -1,8 +1,15 @@
 <div class="topnav">
-  <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Components</a>
+  <a [routerLink]="['/dashboard']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Components</a>
   <a routerLink="/observables" routerLinkActive="active">Observable</a>
   <a routerLink="form" routerLinkActive="active">Form</a>
   <a [routerLink]="'entrycomponents'" routerLinkActive="active">Entry Component</a>
   <a [routerLink]="['lifecyclehooks']" routerLinkActive="active">Lif Cycle Hooks</a>
 </div>
-<span style="float: right;">Logged {{isLogged? 'In': 'Out'}}</span>
+
+<!-- <span [ngClass]="{'right':isLogged,'agshsgg':isLogged}">Logged {{isLogged? 'In': 'Out'}}</span> -->
+
+<span *ngIfNot="!isLogged" style="float: right;">Logged {{isLogged? 'In': 'Out'}}</span>
+
+<!-- <ng-template [ngIf]="isLogged">
+  <span style="float: right;">Logged {{isLogged? 'In': 'Out'}}</span>
+</ng-template> -->

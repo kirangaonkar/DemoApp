@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DashboardComponent implements OnInit, CanComponentDeActivate {
 
+  demoList = ['', '', ''];
   constructor(
     private loginService: LoginService
   ) { }
